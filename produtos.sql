@@ -16,5 +16,7 @@ VALUES
 SELECT * FROM produtos;
 
 UPDATE produtos SET estoque = 8 WHERE id = 1;
+UPDATE produtos SET estoque = 1 WHERE id = 3;
+UPDATE produtos SET estoque = 4 WHERE id = 2;
 
 DELETE FROM produtos;
