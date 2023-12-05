@@ -8,7 +8,10 @@ CREATE TABLE produtos (
 
 INSERT INTO produtos (id, marca, produto, estoque, preco) 
 VALUES 
-(x, 'x', 'x', y, x.y);
+(90, 'Ruffles', 'Batata Chips', 9, 2.5),
+(91, 'Doritos', 'Salgadinho Nacho', 7, 5),
+(92, 'Dori', 'Amendoim', 10, 5);
+(93, 'Fanta', 'Refrigerante de Laranja', 11, 5);
 
 SELECT * FROM produtos;
 
