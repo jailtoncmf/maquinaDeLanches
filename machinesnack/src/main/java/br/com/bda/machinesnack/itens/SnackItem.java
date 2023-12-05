@@ -8,11 +8,16 @@ public class SnackItem {
     private int estoque;
     private double preco;  
 
+    
     public SnackItem(int id, String marca, String produto, int estoque, double preco) {
         this.id = id;
         this.marca = marca;
         this.produto = produto;
         this.estoque = estoque;
+        this.preco = preco;
+    }
+    public SnackItem(String produto, double preco) {
+        this.produto = produto;
         this.preco = preco;
     }
 
