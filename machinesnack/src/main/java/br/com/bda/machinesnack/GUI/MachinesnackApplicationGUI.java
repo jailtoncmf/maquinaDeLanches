@@ -1,5 +1,9 @@
 package br.com.bda.machinesnack.GUI;
 
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -41,40 +45,59 @@ public class MachinesnackApplicationGUI {
         JFrame frame = new JFrame("Máquina de Lanches");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        JPanel panel = new JPanel();
+        JPanel panel = new JPanel(new GridBagLayout());
         frame.getContentPane().add(panel);
         placeComponents(panel);
+        frame.setSize(800, 600);
+        
 
-        frame.setSize(400, 300);
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+
+        frame.setLocationRelativeTo(null);
+
         frame.setVisible(true);
     }
 
     private static void placeComponents(JPanel panel) {
-        panel.setLayout(null);
+    	GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridwidth = GridBagConstraints.REMAINDER;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.insets = new Insets(10, 10, 10, 10); 
+
+        Font labelFont = new Font("Arial", Font.BOLD, 24);
 
         JLabel label = new JLabel("Bem-vindo à Máquina de Lanches!");
-        label.setBounds(10, 20, 300, 25);
-        panel.add(label);
+        label.setFont(labelFont);
+        panel.add(label, gbc);
+
+        Font buttonFont = new Font("Arial", Font.PLAIN, 18);
 
         JButton comprarButton = new JButton("Comprar Lanche");
-        comprarButton.setBounds(10, 80, 150, 25);
-        panel.add(comprarButton);
+        comprarButton.setFont(buttonFont);
+        panel.add(comprarButton, gbc);
 
         JButton removerButton = new JButton("Remover Produto");
-        removerButton.setBounds(180, 80, 150, 25);
-        panel.add(removerButton);
+        removerButton.setFont(buttonFont);
+        panel.add(removerButton, gbc);
 
         JButton criarButton = new JButton("Criar Produto");
-        criarButton.setBounds(10, 120, 150, 25);
-        panel.add(criarButton);
+        criarButton.setFont(buttonFont);
+        panel.add(criarButton, gbc);
 
         JButton atualizarButton = new JButton("Atualizar Produto");
-        atualizarButton.setBounds(180, 120, 150, 25);
-        panel.add(atualizarButton);
+        atualizarButton.setFont(buttonFont);
+        panel.add(atualizarButton, gbc);
 
         JButton sairButton = new JButton("Sair");
-        sairButton.setBounds(10, 160, 150, 25);
-        panel.add(sairButton);
+        sairButton.setFont(buttonFont);
+        panel.add(sairButton, gbc);
+
+        comprarButton.addActionListener(e -> processarCompra());
+        removerButton.addActionListener(e -> removerProduto());
+        criarButton.addActionListener(e -> criarProduto());
+        atualizarButton.addActionListener(e -> atualizarProduto());
+        sairButton.addActionListener(e -> System.exit(0));
+    
 
         comprarButton.addActionListener(new ActionListener() {
             @Override
