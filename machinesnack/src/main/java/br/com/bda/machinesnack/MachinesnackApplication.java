@@ -23,7 +23,7 @@ import br.com.bda.machinesnack.money.ValidadorNotas;
     
     public static void main(String[] args) {
 	        try {
-	            Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost/machine_snack", "postgres", "fifa16");
+	            Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost/machine_snack", "postgres", "postgres");
 
 	            initializeMachinesnack(connection);
 
