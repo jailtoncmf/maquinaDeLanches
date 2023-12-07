@@ -30,7 +30,7 @@ public class MachinesnackApplicationGUI {
 
     public static void main(String[] args) {
     	try {
-            connection = DriverManager.getConnection("jdbc:postgresql://localhost/machine_snack", "postgres", "fifa16");
+            connection = DriverManager.getConnection("jdbc:postgresql://localhost/machine_snack", "postgres", "postgres");
 
             initializeMachinesnack(connection);
 
